@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block title %}autoHVAC- Ini-config edit{% endblock %}
+{% block iniConfigActive %}active{% endblock %}
+
+{% block content %}
+    <div class="chapterTitle">Edit Ini-config settings</div>
+    <form method="post" action="">
+    
+    <div class="subchapterTitle">Section: general</div>
+    <div class="dottedListItem"><span class="formlabel">Update Interval:</span><input type="text" size="20" maxlength="20" name="general_update_interval" value="{{ conf['general_update_interval'] }}"></div>
+
+    <div class="subchapterTitle">Section: tempodb</div>
+    <div class="dottedListItem"><span class="formlabel">Is enabled:</span><input type="checkbox" name="tempodb_enabled" value="on" {% if conf['tempodb_enabled'] == 'on' %}checked{% endif %}></div>
+    <div class="dottedListItem"><span class="formlabel">Key:</span><input type="text" size="20" maxlength="20" name="tempodb_key" value="{{ conf['tempodb_key'] }}"></div>
+    <div class="dottedListItem"><span class="formlabel">Secret:</span><input type="text" size="20" maxlength="20" name="tempodb_secret" value="{{ conf['tempodb_secret'] }}"></div>
+    
+    <div class="subchapterTitle">Section: plotly</div>
+    <div class="dottedListItem"><span class="formlabel">Is enabled:</span><input type="checkbox" name="plotly_enabled" value="on" {% if conf['plotly_enabled'] == 'on' %}checked{% endif %}></div>
+    <div class="dottedListItem"><span class="formlabel">Username:</span><input type="text" size="20" maxlength="20" name="plotly_user" value="{{ conf['plotly_user'] }}"></div>
+    <div class="dottedListItem"><span class="formlabel">Key:</span><input type="text" size="20" maxlength="20" name="plotly_key" value="{{ conf['plotly_key'] }}"></div>
+
+    <div class="subchapterTitle">Section: DS18B20 1</div>
+    <div class="dottedListItem"><span class="formlabel">Is enabled:</span><input type="checkbox" name="ds18b20_1_enabled" value="on" {% if conf['ds18b20_1_enabled'] == 'on' %}checked{% endif %}></div>
+    <div class="dottedListItem"><span class="formlabel">name:</span><input type="text" size="20" maxlength="20" name="ds18b20_1_name" value="{{ conf['ds18b20_1_name"></div>
+    <div class="dottedListItem"><span class="formlabel">path:</span><input type="text" size="20" maxlength="20" name="ds18b20_1_path" value="{{ conf['ds18b20_1_path'] }}"></div>
+
+    <div class="subchapterTitle">Section: DS18B20 2</div>
+    <div class="dottedListItem"><span class="formlabel">Is enabled:</span><input type="checkbox" name="ds18b20_2_enabled" value="on" {% if conf['ds18b20_2_enabled'] == 'on' %}checked{% endif %}></div>
+    <div class="dottedListItem"><span class="formlabel">name:</span><input type="text" size="20" maxlength="20" name="ds18b20_2_name" value="{{ conf['ds18b20_2_name"></div>
+    <div class="dottedListItem"><span class="formlabel">path:</span><input type="text" size="20" maxlength="20" name="ds18b20_2_path" value="{{ conf['ds18b20_2_path'] }}"></div>
+
+    <div class="subchapterTitle">Section: Wunderground</div>
+    <div class="dottedListItem"><span class="formlabel">Is enabled:</span><input type="checkbox" name="wunderground_enabled" value="on" {% if conf['wunderground_enabled'] == 'on' %}checked{% endif %}></div>
+    <div class="dottedListItem"><span class="formlabel">name:</span><input type="text" size="20" maxlength="20" name="wunderground_key" value="{{ conf['wunderground_key"></div>
+    <div class="dottedListItem"><span class="formlabel">state:</span><input type="text" size="20" maxlength="20" name="wunderground_state" value="{{ conf['wunderground_state"></div>
+    <div class="dottedListItem"><span class="formlabel">city:</span><input type="text" size="20" maxlength="20" name="wunderground_city" value="{{ conf['wunderground_city"></div>
+    <div class="dottedListItem"><span class="formlabel">path:</span><input type="text" size="20" maxlength="20" name="wunderground_retry" value="{{ conf['wunderground_retry"></div>
+
+    <div class="subchapterTitle">Section: Humidifier</div>
+    <div class="dottedListItem"><span class="formlabel">Is enabled:</span><input type="checkbox" name="humidifier_enabled" value="on" {% if conf['humidifier_enabled'] == 'on' %}checked{% endif %}></div>
+    <div class="dottedListItem"><span class="formlabel">Deadband:</span><input type="text" size="20" maxlength="20" name="humidifier_deadband" value="{{ conf['humidifier_deadband"></div>
+    <div class="dottedListItem"><span class="formlabel">GPIO Pin:</span><input type="text" size="20" maxlength="20" name="humidifier_gpio" value="{{ conf['humidifier_gpio"></div>
+    <div class="dottedListItem"><span class="formlabel">Minimum Humidity:</span><input type="text" size="20" maxlength="20" name="humidifier_min_humidity" value="{{ conf['humidifier_min_humidity"></div>
+    <div class="dottedListItem"><span class="formlabel">Maximum Humidity:</span><input type="text" size="20" maxlength="20" name="humidifier_max_humidity" value="{{ conf['humidifier_max_humidity"></div>
+
+    <div class="subchapterTitle">Section: Nest</div>
+    <div class="dottedListItem"><span class="formlabel">Is enabled:</span><input type="checkbox" name="nest_enabled" value="on" {% if conf['nest_enabled'] == 'on' %}checked{% endif %}></div>
+    <div class="dottedListItem"><span class="formlabel">login:</span><input type="text" size="20" maxlength="20" name="nest_login" value="{{ conf['nest_login"></div>
+    <div class="dottedListItem"><span class="formlabel">password:</span><input type="text" size="20" maxlength="20" name="nest_password" value="{{ conf['nest_password"></div>
+    <div class="dottedListItem"><span class="formlabel">city:</span><input type="text" size="20" maxlength="20" name="wunderground_city" value="{{ conf['wunderground_city"></div>
+
+    <div class="dottedListItem"><input type="submit" value="Submit"></div>
+    </form>
+{% endblock %}
